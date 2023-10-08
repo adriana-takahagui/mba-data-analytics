@@ -1,4 +1,4 @@
-# Projeto de Conclusão da Disciplina de "Data Analytics" do MBA em Data Science
+# Projeto de Conclusão da Disciplina "Data Analytics" do MBA em Data Science
 
 ---
 
@@ -6,18 +6,10 @@
 
 <!--ts-->
    * [Descrição do Projeto](https://github.com/adriana-takahagui/mba-data-analytics/tree/main#descri%C3%A7%C3%A3o-do-projeto)
-   * [Usage](#usage)
-      * [STDIN](#stdin)
-      * [Local files](#local-files)
-      * [Remote files](#remote-files)
-      * [Multiple files](#multiple-files)
-      * [Combo](#combo)
-      * [Auto insert and update TOC](#auto-insert-and-update-toc)
-      * [GitHub token](#github-token)
-      * [TOC generation with Github Actions](#toc-generation-with-github-actions)
-   * [Tests](#tests)
+   * [Descrição do Problema de Negócio](https://github.com/adriana-takahagui/mba-data-analytics/tree/main#descrição-do-problema-de-negócio)
+   * [Dicionário de Variáveis]()
    * [Dependency](#dependency)
-   * [Docker](#docker)
+   * [Fontes e Referências](https://github.com/adriana-takahagui/mba-data-analytics/tree/main#fontes-e-refer%C3%AAncias)
      * [Local](#local)
      * [Public](#public)
 <!--te-->
@@ -34,7 +26,9 @@
 - Construir um Dashboard no Power BI. 
 - O Dashboard no Power BI deve conter no mínimo um gráfico construído com Python. 
 
-## Descrição do Tema do Projeto
+## Descrição do Problema de Negócio
+
+Esta seção aborda a descrição do problema de negócio escolhido para desenvolver o projeto da disciplina "Data Analytics".
 
 **Tema**: 
 
@@ -50,7 +44,13 @@
 - Assim, a "Online Shopping Harbor" deve ser capaz não somente de atender seus clientes da melhor maneira possível como também inovar com uso de tecnologia e inteligência artificial para que possa sobreviver em um mercado cada vez mais competitivo. 
 - E para alcançar isso, percebeu que ***precisa melhorar seu atendimento ao cliente*** para que este possa ter a ***melhor experiência*** na sua jornada e, assim, retornar em outras compras e se tornar um promotor da marca da "Online Shopping Harbor".
 
-**Dicionário de Variáveis dos conjuntos de dados**:
+**Link do Dashboard no Power BI**:
+
+**Vídeo do YouTube**:
+
+## Dicionário de Variáveis
+
+Esta seção descreve as tabelas e as variáveis utililizadas no projeto e na resolução do problema proposto.
 
 O projeto foi desenvolvido utilizando dados anomizados de um e-commerce e possui dados do ano de 2022. E é formado pelas tabelas:
 - dados_chamados_2022.csv
@@ -63,16 +63,19 @@ E abaixo segue a descrição de cada variável em cada tabela:
 
 
 
-**Link do Dashboard no Power BI**:
 
-**Vídeo do YouTube**:
 
-**Metodologia de desenvolvimento**: 
+## Metodologia de Desenvolvimento
+
 
 1. Entendimento do problema:
 
-**Desenvolvimento e Explicações de cada relatório desenvolvido**: 
+## Desenvolvimento e Explicações 
 
-**Fontes e Referências**:
+Esta seção aborda o desenvolvimento e as explicações de cada relatório desenvolvido para resolver o problema proposto.
+
+## Fontes e Referências
+
+Esta seção disponibiliza as fontes e as referências utilizadas para o desenvolvimento do projeto e resolução do problema proposto. 
 
 [^1]: Nome escolhido com uso do ChatGPT
