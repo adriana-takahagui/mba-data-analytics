@@ -5,7 +5,7 @@
 ## Índice
 
 <!--ts-->
-   * [Descrição do Projeto](https://github.com/adriana-takahagui/mba-data-analytics/edit/main/README.md#descri%C3%A7%C3%A3o-do-projeto)
+   * [Descrição do Projeto](https://github.com/adriana-takahagui/mba-data-analytics/tree/main#descri%C3%A7%C3%A3o-do-projeto)
    * [Usage](#usage)
       * [STDIN](#stdin)
       * [Local files](#local-files)
