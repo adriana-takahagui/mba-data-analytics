@@ -5,11 +5,11 @@
 ## Índice
 
 <!--ts-->
-   * [Descrição do Projeto](https://github.com/adriana-takahagui/mba-data-analytics/tree/main#descrição-do-projeto)
-   * [Descrição do Problema de Negócio](https://github.com/adriana-takahagui/mba-data-analytics/tree/main#descrição-do-problema-de-negócio)
+   * [Descrição do Projeto](https://github.com/adriana-takahagui/mba-data-analytics#descrição-do-projeto)
+   * [Descrição do Problema de Negócio](https://github.com/adriana-takahagui/mba-data-analytics#descrição-do-problema-de-negócio)
    * [Dicionário de Variáveis]()
    * [Dependency](#dependency)
-   * [Fontes e Referências](https://github.com/adriana-takahagui/mba-data-analytics/tree/main#fontes-e-refer%C3%AAncias)
+   * [Fontes e Referências](https://github.com/adriana-takahagui/mba-data-analytics#fontes-e-refer%C3%AAncias)
      * [Local](#local)
      * [Public](#public)
 <!--te-->
@@ -22,9 +22,9 @@
 
 **Objetivos do Projeto**: 
 
-- Resolver um problema de negócio com aplicação dos conhecimentos dos módulos da disciplina "Data Analytics" do MBA em Data Science. 
-- Construir um Dashboard no Power BI. 
-- O Dashboard no Power BI deve conter no mínimo um gráfico construído com Python. 
+- [] Resolver um problema de negócio com aplicação dos conhecimentos dos módulos da disciplina "Data Analytics" do MBA em Data Science. 
+- [] Construir um Dashboard no Power BI. 
+- [] O Dashboard no Power BI deve conter no mínimo um gráfico construído com Python. 
 
 ## Descrição do Problema de Negócio
 
