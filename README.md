@@ -5,7 +5,7 @@
 ## Índice
 
 <!--ts-->
-   * [Descrição do Projeto](https://github.com/adriana-takahagui/mba-data-analytics/tree/main#descri%C3%A7%C3%A3o-do-projeto)
+   * [Descrição do Projeto](https://github.com/adriana-takahagui/mba-data-analytics/tree/main#descrição-do-projeto)
    * [Descrição do Problema de Negócio](https://github.com/adriana-takahagui/mba-data-analytics/tree/main#descrição-do-problema-de-negócio)
    * [Dicionário de Variáveis]()
    * [Dependency](#dependency)
