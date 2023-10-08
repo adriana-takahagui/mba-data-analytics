@@ -8,10 +8,13 @@
    * [Descrição do Projeto](https://github.com/adriana-takahagui/mba-data-analytics#descrição-do-projeto)
    * [Descrição do Problema de Negócio](https://github.com/adriana-takahagui/mba-data-analytics#descrição-do-problema-de-negócio)
    * [Dicionário de Variáveis]()
-   * [Dependency](#dependency)
+   * [Metodologia de Desenvolvimento]()
+   * [Desenvolvimento e Explicações]()
+     * [Preparação e Tratamento dos Dados]()
+     * [Relacionamento das Tabelas]()
+     * [Relatórios e Explicações]()
+     * [Insights]()
    * [Fontes e Referências](https://github.com/adriana-takahagui/mba-data-analytics#fontes-e-refer%C3%AAncias)
-     * [Local](#local)
-     * [Public](#public)
 <!--te-->
 
 ---
@@ -22,9 +25,9 @@
 
 **Objetivos do Projeto**: 
 
-- [] Resolver um problema de negócio com aplicação dos conhecimentos dos módulos da disciplina "Data Analytics" do MBA em Data Science. 
-- [] Construir um Dashboard no Power BI. 
-- [] O Dashboard no Power BI deve conter no mínimo um gráfico construído com Python. 
+- [X] Resolver um problema de negócio com aplicação dos conhecimentos dos módulos da disciplina "Data Analytics" do MBA em Data Science. 
+- [X] Construir um Dashboard no Power BI. 
+- [ ] O Dashboard no Power BI deve conter no mínimo um gráfico construído com Python. 
 
 ## Descrição do Problema de Negócio
 
@@ -67,12 +70,28 @@ E abaixo segue a descrição de cada variável em cada tabela:
 
 ## Metodologia de Desenvolvimento
 
-
-1. Entendimento do problema:
+1. Entendimento do problema: 
 
 ## Desenvolvimento e Explicações 
 
 Esta seção aborda o desenvolvimento e as explicações de cada relatório desenvolvido para resolver o problema proposto.
+
+### Preparação e Tratamento dos Dados
+
+
+### Relacionamento das Tabelas
+
+
+### Relatórios e Explicações
+
+Foram criadas 5 páginas:
+- Página Inicial
+- Chamados
+- Análise RFV
+- NPS
+- Recomendações
+
+### Insights 
 
 ## Fontes e Referências
 
