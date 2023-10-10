@@ -29,6 +29,8 @@
 - [X] Construir um Dashboard no Power BI. 
 - [ ] O Dashboard no Power BI deve conter no mínimo um gráfico construído com Python. 
 
+---
+
 ## Descrição do Problema de Negócio
 
 Esta seção aborda a descrição do problema de negócio escolhido para desenvolver o projeto da disciplina "Data Analytics".
@@ -51,6 +53,8 @@ Esta seção aborda a descrição do problema de negócio escolhido para desenvo
 
 **Vídeo do YouTube**:
 
+---
+
 ## Dicionário de Variáveis
 
 Esta seção descreve as tabelas e as variáveis utililizadas no projeto e na resolução do problema proposto.
@@ -67,10 +71,13 @@ E abaixo segue a descrição de cada variável em cada tabela:
 
 
 
+---
 
 ## Metodologia de Desenvolvimento
 
 1. Entendimento do problema: 
+
+---
 
 ## Desenvolvimento e Explicações 
 
@@ -92,6 +99,12 @@ Foram criadas 5 páginas:
 - Recomendações
 
 ### Insights 
+
+--- 
+
+## Próximos Passos 
+
+---
 
 ## Fontes e Referências
 
