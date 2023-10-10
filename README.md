@@ -91,11 +91,12 @@ Esta seção aborda o desenvolvimento e as explicações de cada relatório dese
 
 ### Relatórios e Explicações
 
-Foram criadas 5 páginas:
+Este dashboard é formado por 6 páginas:
 - Página Inicial
 - Chamados
 - Análise RFV
 - NPS
+- Correlação & Outliers
 - Recomendações
 
 ### Insights 
