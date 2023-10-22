@@ -268,21 +268,27 @@ A página **"Análise de Chamados de Atendimento"** traz uma visão geral dos pr
 - Principais departamentos que receberam mais chamados 
 - Entre outros.
 
-Podemos verificar que ao longo do ano de 2022, no geral, tiveram alguns picos de abertura de chamados que coincidem com datas comemorativas como no mês de maio (Dia das Mães) e no mês de novembro/dezembro (Black Friday), um comportamento esperado para empresas de varejo, pois o volume de pedidos também aumenta. <br/>
-A Taxa de Resolução geral no 1º Chamado (FCR) é de 75,63%, uma taxa aceitável, sendo que para PF (Pessoa Física) ficou em torno de 72,11% (abaixo da meta esperada de 75%) e para PJ (Pessoa Jurídica) ficou em torno de 83,27%. <br/>
-Já a respeito do tempo médio de resolução geral, em média, leva 60,69 horas por chamado, ou seja, mais de 2,5 dias para resolver um problema ou alguma solicitação. Mas, analisando por perfil, vemos que PF (Pessoa Física) possui um desempenho pior (72,73 horas) e PJ (Pessoa Jurídica) possui um desempenho melhor (34,56 horas), apesar da menor quantidade de clientes (1.473 clientes, ou seja, 12,85% de clientes considerando o período de 2022). <br/>
+Podemos verificar que ao longo do ano de 2022, no geral, tiveram alguns picos de abertura de chamados que coincidem com datas comemorativas como no mês de maio (Dia das Mães) e no mês de novembro/dezembro (Black Friday), um comportamento esperado para empresas de varejo, pois o volume de pedidos também aumenta. 
+
+A Taxa de Resolução geral no 1º Chamado (FCR) é de 75,63%, uma taxa aceitável, sendo que para PF (Pessoa Física) ficou em torno de 72,11% (abaixo da meta esperada de 75%) e para PJ (Pessoa Jurídica) ficou em torno de 83,27%. 
+
+Já a respeito do tempo médio de resolução geral, em média, leva 60,69 horas por chamado, ou seja, mais de 2,5 dias para resolver um problema ou alguma solicitação. Mas, analisando por perfil, vemos que PF (Pessoa Física) possui um desempenho pior (72,73 horas) e PJ (Pessoa Jurídica) possui um desempenho melhor (34,56 horas), apesar da menor quantidade de clientes (1.473 clientes, ou seja, 12,85% de clientes considerando o período de 2022). 
+
 Além disso, foram abertos 5.166 chamados (35,15%) por busca de informação, um indicativo para melhorar a qualidade e a disposição da informação no site ou app do e-commerce. 
 
 ![image](images/dashboard2.PNG)
 
-A página **"Análise da Distribuição do Tempo de Resolução dos Chamados de Atendimento"** possui um visual criado em Python. No caso, foi criado um histograma com a distribuição de tempo de resolução dos chamados em hora, que seria a diferença entre a Data de Criação e a Data de Encerramento do chamado, com marcadores de quartil 25% (ou seja, um quarto dos dados), mediana (quartil 50%) (ou seja, metade dos dados), média, quartil 75% (ou seja, três quartos dos dados) e desvio padrão. <br/>
-Pelo formato do histograma com um cauda longa à direita, podemos perceber claramente a existência de outliers, assim como a grande diferença entre os valores da mediana e da média, ou seja, existem chamados cujo tempo de resolução difere bastante do comportamento padrão (ou seja, extrapolam o intervalo interquartil). <br/>
+A página **"Análise da Distribuição do Tempo de Resolução dos Chamados de Atendimento"** possui um visual criado em Python. No caso, foi criado um histograma com a distribuição de tempo de resolução dos chamados em hora, que seria a diferença entre a Data de Criação e a Data de Encerramento do chamado, com marcadores de quartil 25% (ou seja, um quarto dos dados), mediana (quartil 50%) (ou seja, metade dos dados), média, quartil 75% (ou seja, três quartos dos dados) e desvio padrão. 
+
+Pelo formato do histograma com um cauda longa à direita, podemos perceber claramente a existência de outliers, assim como a grande diferença entre os valores da mediana e da média, ou seja, existem chamados cujo tempo de resolução difere bastante do comportamento padrão (ou seja, extrapolam o intervalo interquartil). 
+
 _Observação_: Até o momento de desenvolvimento deste projeto, não há suporte para os visuais do Python nos relatórios publicados na Web, por esse motivo, o gráfico não é renderizado. <br/>
 Link para documentação da Microsoft: https://learn.microsoft.com/pt-br/power-bi/collaborate-share/service-publish-to-web
 
 ![image](images/dashboard3.PNG)
 
-A página **"Segmentação de Clientes"**[^3] possui análise de segmentação do cliente baseado no modelo RFV (Recência, Frequência e Valor) com o intuito de entender e comparar o comportamento do cliente (comparar clientes que não precisaram de atendimento e clientes que abriram um chamado de atendimento, seja para reclamar, informar-se ou solicitar algo). <br/>
+A página **"Segmentação de Clientes"**[^3] possui análise de segmentação do cliente baseado no modelo RFV (Recência, Frequência e Valor) com o intuito de entender e comparar o comportamento do cliente (comparar clientes que não precisaram de atendimento e clientes que abriram um chamado de atendimento, seja para reclamar, informar-se ou solicitar algo). 
+
 O modelo RFV é definida como: 
 - **R (Recência)**: período desde a última compra (valor menor significa uma maior probabilidade de o cliente repetir pedidos e são clientes mais propensos a promoções)
 - **F (Frequência)**: número de compras realizadas dentro de um certo período (alta frequência significa maior lealdade, clientes mais engajados e satisfeitos) 
@@ -327,8 +333,10 @@ Além disso, o relatório apresenta uma matriz de segmentação de clientes conf
 |  Hibernando          |  A última compra foi feita há algum tempo. Pouco gasto e baixo número de pedidos.                      |  Ofereça outros produtos relevantes e descontos especiais. Recrie o valor da marca.                                                    |  = 2         |  = 2          |
 |  Perdidos            |  Recência, frequência e pontuação monetária mais baixas.                                               |  Reviva o interesse com uma campanha de alcance, caso contrário, ignore.                                                               |  < 2         |  < 2          |
 
-Quando não existe um chamado atrelado a compra, percebemos 0,01% de campeões, 0,62% de clientes fiéis, 7,30% de potenciais fiéis e 68,44% de clientes perdidos.  <br/>
-Já quando analisamos compras com chamado atrelado, ou seja, o consumidor necessitou de alguma assistência na jornada de compra, temos 2,06% de campeões, 7,81% de clientes fiéis, 24,23% de potenciais fiéis e 34,48% de clientes perdidos. <br/>
+Quando não existe um chamado atrelado a compra, percebemos 0,01% de campeões, 0,62% de clientes fiéis, 7,30% de potenciais fiéis e 68,44% de clientes perdidos.  
+
+Já quando analisamos compras com chamado atrelado, ou seja, o consumidor necessitou de alguma assistência na jornada de compra, temos 2,06% de campeões, 7,81% de clientes fiéis, 24,23% de potenciais fiéis e 34,48% de clientes perdidos. 
+
 Aqui conseguimos ver uma diferença interessante, quase uma redução de 50% em clientes perdidos quando o consumidor abre um chamado.  <br/>
 Isso mostra a importância de possuir um bom serviço de atendimento ao cliente em toda a jornada de compra do consumidor. 
 
@@ -338,16 +346,20 @@ Verificando o detalhe de formação de cada segmentação: quais os clientes est
 
 ![image](images/dashboard5.PNG)
 
-A página **"NPS - Net Promoter Score"** traz uma análise da métrica NPS, muito utilizada para mensurar o nível de satisfação do cliente em relação à experiência de compra e entrega do produto. <br/>
-Ela é obtida através de uma pesquisa em que se faz apenas uma pergunta: "Em uma escala de 0 a 10, o quanto você indicaria a empresa "Online Shopping Harbor" a um amigo ou colega?", que tem, portanto, como reposta uma nota entre 0 a 10. <br/>
+A página **"NPS - Net Promoter Score"** traz uma análise da métrica NPS, muito utilizada para mensurar o nível de satisfação do cliente em relação à experiência de compra e entrega do produto. 
+
+Ela é obtida através de uma pesquisa em que se faz apenas uma pergunta: "Em uma escala de 0 a 10, o quanto você indicaria a empresa "Online Shopping Harbor" a um amigo ou colega?", que tem, portanto, como reposta uma nota entre 0 a 10. 
+
 De acordo com a resposta dada, o cliente é classificado em 3 grupos distintos: 
 - Promotores (aqueles que avaliaram com uma nota 9 ou 10): são clientes fieis que recomendam a empresa 
 - Neutros (aqueles que avaliaram com uma nota 7 ou 8): clientes satisfeitos, mas que não engajam com a empresa 
 - Detratores (aqueles que avaliaram com uma nota 0 a 6): clientes insatisfeitos que criticam a empresa para amigos e familiares
 Para o cálculo do NPS, basta calcular a % de promotores e a % de detratores e realizar a subtração entre os valores obtidos. 
 
-No caso da "Online Shopping Harbor", vemos que a concentração de respostas se encontra nas notas 9 e 10, apesar disso, o NPS é de aproximadamente 70, média mantida ao longo do ano de 2022. Isso só mostra que a empresa precisa melhorar em relação à satisfação do cliente. <br/>
-Ao contrário da análise de segmentação de clientes, consumidores que abriram chamado e responderam à pesquisa NPS resultam em uma nota muito baixa, pois o número de detratores é maior que o número de promotores. Porém, somente 1.132 avaliações foram realizadas, em torno de 4,2% do total. <br/>
+No caso da "Online Shopping Harbor", vemos que a concentração de respostas se encontra nas notas 9 e 10, apesar disso, o NPS é de aproximadamente 70, média mantida ao longo do ano de 2022. Isso só mostra que a empresa precisa melhorar em relação à satisfação do cliente. 
+                                     
+Ao contrário da análise de segmentação de clientes, consumidores que abriram chamado e responderam à pesquisa NPS resultam em uma nota muito baixa, pois o número de detratores é maior que o número de promotores. Porém, somente 1.132 avaliações foram realizadas, em torno de 4,2% do total. 
+
 Já aqueles que não abriram chamado e responderam à pesquisa NPS resultam em um nota melhor, em torno de 73,53. 
 
 ![image](images/dashboard6.PNG)
