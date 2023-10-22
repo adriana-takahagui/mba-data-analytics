@@ -19,7 +19,6 @@
    * [Fontes e Referências](https://github.com/adriana-takahagui/mba-data-analytics#fontes-e-refer%C3%AAncias)
 <!--te-->
 
-
 ---
 
 ## Descrição do Projeto
@@ -77,7 +76,7 @@ Esta seção descreve as tabelas e as variáveis utilizadas no projeto e no prob
 **Descrição das variáveis com origem em: dados_chamados_2022.xlsx**
 
 |  N |       Variável       | Tipo do Dado |                              Descrição                             |                          Valores Permitidos                          |
-|:--:|:--------------------:|:------------:|:------------------------------------------------------------------:|:--------------------------------------------------------------------:|
+|:--:|----------------------|:------------:|--------------------------------------------------------------------|----------------------------------------------------------------------|
 |  1 | id_protocolo         |    String    | Identificador alfanumérico único do chamado                        | Não enumerado                                                        |
 |  2 | id_cliente           |    String    | Identificador alfanumérico único do cliente                        | Não enumerado                                                        |
 |  3 | id_compra            |    String    | Identificador alfanumérico único da compra                         | Não enumerado                                                        |
@@ -103,7 +102,7 @@ Esta seção descreve as tabelas e as variáveis utilizadas no projeto e no prob
 **Descrição das variáveis com origem em: dados_nps_2022.xlsx**
 
 | N |     Variável     | Tipo do Dado |                                        Descrição                                       |      Valores Permitidos     |
-|:-:|:----------------:|:------------:|:--------------------------------------------------------------------------------------:|:---------------------------:|
+|:-:|------------------|:------------:|----------------------------------------------------------------------------------------|-----------------------------|
 | 1 | id_nps           |    String    | Identificador alfanumérico único da pesquisa NPS                                       | Não enumerado               |
 | 2 | id_entrega       |    String    | Identificador alfanumérico único da entrega                                            | Não enumerado               |
 | 3 | id_cliente       |    String    | Identificador alfanumérico único do cliente                                            | Não enumerado               |
@@ -116,7 +115,7 @@ Esta seção descreve as tabelas e as variáveis utilizadas no projeto e no prob
 **Descrição das variáveis com origem em: dados_rfv_2022.xlsx**
 
 | N |      Variável      | Tipo do Dado |                                     Descrição                                    |                   Valores Permitidos                   |
-|:-:|:------------------:|:------------:|:--------------------------------------------------------------------------------:|:------------------------------------------------------:|
+|:-:|--------------------|:------------:|----------------------------------------------------------------------------------|--------------------------------------------------------|
 | 1 | id_cliente         |    String    | Identificador alfanumérico único do cliente                                      | Não enumerado                                          |
 | 2 | ano                |    Inteiro   | Ano da data da compra                                                            | Formato do ano com 4 dígitos                           |
 | 3 | mes                |    Inteiro   | Mês da data da compra                                                            | Formato do mês em dígitos, ou seja, entre 1 a 12       |
@@ -129,7 +128,7 @@ Esta seção descreve as tabelas e as variáveis utilizadas no projeto e no prob
 **Descrição das variáveis com origem em: dados_clientes.xlsx**
 
 | N |   Variável   | Tipo do Dado |                  Descrição                  |                                           Valores Permitidos                                           |
-|:-:|:------------:|:------------:|:-------------------------------------------:|:------------------------------------------------------------------------------------------------------:|
+|:-:|--------------|:------------:|---------------------------------------------|--------------------------------------------------------------------------------------------------------|
 | 1 | id_cliente   |    String    | Identificador alfanumérico único do cliente | Não enumerado                                                                                          |
 | 2 | nome_cliente |    String    | Nome do cliente                             | Dado anonimizado e vinculado a números inteiros entre 10001 e 67392, porém novos clientes podem surgir |
 | 3 | perfil       |    String    | Perfil do cliente                           | PF (Pessoa Física); PJ (Pessoa Jurídica)                                                               |
@@ -142,7 +141,7 @@ Esta seção descreve as tabelas e as variáveis utilizadas no projeto e no prob
 **Descrição das variáveis com origem em: dados_categoria_produtos.xlsx**
 
 | N |       Variável       | Tipo do Dado |                 Descrição                |                Valores Permitidos               |
-|:-:|:--------------------:|:------------:|:----------------------------------------:|:-----------------------------------------------:|
+|:-:|----------------------|:------------:|------------------------------------------|-------------------------------------------------|
 | 1 | id_categoria_produto |    Inteiro   | Identificador numérico único do produto  | Não enumerado                                   |
 | 2 | departamento_produto |    String    | Departamento a que pertence o produto    | Não enumerado. Novos departamentos podem surgir |
 | 3 | categoria_produto    |    String    | Categoria a que pertence o produto       | Não enumerado. Novas categorias podem surgir    |
@@ -191,36 +190,180 @@ Esta seção descreve as tabelas e as variáveis utilizadas no projeto e no prob
 
 ---
 
-## Desenvolvimento e Explicações 
+## Desenvolvimento 
 
-Esta seção aborda o desenvolvimento e as explicações de cada relatório desenvolvido para resolver o problema proposto.
+Esta seção aborda o desenvolvimento e as explicações de cada relatório desenvolvido para auxiliar no problema proposto. 
 
-### Preparação e Tratamento dos Dados
+### Preparação dos Dados 
 
+A maioria dos tratamentos dos dados foi realizada no momento de extração e anomização do dado. Como uma boa prática no Power BI, é recomendável trazer a informação tratada para evitar processamentos desnecessários e/ou pesados no Serviço do Power BI. 
+Porém alguns tratamentos foram necessários para ilustrar o uso do Power Query Editor, ferramenta para preparar e tratar o dado no Power BI. 
+
+Os arquivos em formato de Planilhas Excel deram origem às tabelas abaixo: 
+
+|     N    |     Nome do Arquivo                  |     Nome da Tabela         |     Tipo da Tabela    |
+|:--------:|--------------------------------------|----------------------------|-----------------------|
+|     1    |     dados_chamados_2022.xlsx         |     f_Chamados             |     Fato              |
+|     2    |     dados_nps_2022.xlsx              |     f_NPS                  |     Fato              |
+|     3    |     dados_rfv_2022.xlsx              |     f_Clientes_Compras     |     Fato              |
+|     4    |     dados_clientes.xlsx              |     d_Cliente              |     Dimensão          |
+|     5    |     dados_categoria_produtos.xlsx    |     d_Categoria_Produto    |     Dimensão          |
+
+Além do conjunto de dados importado de Planilhas Excel, foi necessária a criação de outras tabelas dentro do Power BI para atender a solução proposta. 
+
+As tabelas são: 
+
+|     N     |     Nome da Tabela        |     Criada em      |     Objetivo                                                 |
+|:---------:|---------------------------|:------------------:|--------------------------------------------------------------|
+|     1     |     d_Aux_Classes         |     Power Query    |     Utilizada no   relatório de "Segmentação de Clientes"    |
+|     2     |     d_Aux_Frequencia      |     Power Query    |     Utilizada no   relatório de "Segmentação de Clientes"    |
+|     3     |     d_Aux_Recencia        |     Power Query    |     Utilizada no   relatório de "Segmentação de Clientes"    |
+|     4     |     d_Aux_Valor           |     Power Query    |     Utilizada no   relatório de "Segmentação de Clientes"    |
+|     5     |     d_Calendario          |     DAX            |     Tabela com datas   para relacionar as 3 tabelas fato     |
+|     6     |     d_Canal               |     Power Query    |     Descrição dos canais   de atendimento                    |
+|     7     |     d_Chamado_Atrelado    |     Power Query    |     Descrição se há um   chamado atrelado ou não             |
+|     8     |     d_Motivo_Chamado      |     Power Query    |     Descrição dos   motivos do chamado                       |
+|     9     |     d_NPS                 |     Power Query    |     Criada para atender   o relatório de NPS                 |
+|     10    |     d_Status_Entrega      |     Power Query    |     Descrição dos status   da entrega                        |
+
+### Tratamentos dos Dados no Power Query Editor
+
+Abaixo seguem os tratamentos realizados no Power Query: 
+
+Tabela "f_Chamados": 
+- Criação da coluna "data_key" a partir da coluna "data_criacao" (datetime) no formato apenas data para relacionamento com a tabela d_Calendario. 
+
+Tabela "f_Clientes_Compras": 
+- Criação da coluna "data_key" a partir das colunas "ano" e "mês" para relacionamento com a tabela d_Calendario. 
+
+Tabela "f_NPS": 
+- Criação da coluna "id_classificacao" para relacionamento com a tabela "d_NPS", utilizada para construir o visual no relatório "NPS - Net Promoter Score". 
+- Criação da coluna "diferenca_datas" para calcular o tempo médio de resposta do cliente. 
 
 ### Relacionamento das Tabelas
 
+De acordo com a preparação e o tratamento especificados acima, a imagem abaixo apresenta a configuração final do relacionamento de todas as tabelas utilizadas na construção do dashboard.
 
-### Relatórios e Explicações
+![image]()
 
-Este dashboard é formado por 6 páginas:
+### Relatórios e Insights
+
+Este dashboard é formado por 5 páginas:
 - Página Inicial
-- Chamados
-- Análise RFV
-- NPS
-- Correlação & Outliers
-- Recomendações
+- Análise de Chamados de Atendimento 
+- Análise da Distribuição do Tempo de Resolução dos Chamados de Atendimento
+- Segmentação de Clientes 
+- NPS - Net Promoter Score
 
-### Insights 
+A página **"Página Inicial"** traz as principais informações resumidas a respeito do dashboard, assim como o link para este documento.[^2]
 
---- 
+![image]()
 
-## Próximos Passos 
+A página **"Análise de Chamados de Atendimento"** traz uma visão geral dos principais indicadores de atendimento ao cliente como: 
+- FCR (First Contact Resolution): indica a porcentagem de interações do cliente que são resolvidas na primeira tentativa de contato
+- Tempo Médio de Resolução em horas
+- Custo de Resolução por canal de atendimento 
+- Motivos de Abertura do Chamado 
+- Evolução de Abertura de Chamados ao longo do ano de 2022
+- Principais departamentos que receberam mais chamados 
+- Entre outros.
+
+Podemos verificar que ao longo do ano de 2022, no geral, tiveram alguns picos de abertura de chamados que coincidem com datas comemorativas como no mês de maio (Dia das Mães) e no mês de novembro/dezembro (Black Friday), um comportamento esperado para empresas de varejo, pois o volume de pedidos também aumenta. <br/>
+A Taxa de Resolução geral no 1º Chamado (FCR) é de 75,63%, uma taxa aceitável, sendo que para PF (Pessoa Física) ficou em torno de 72,11% (abaixo da meta esperada de 75%) e para PJ (Pessoa Jurídica) ficou em torno de 83,27%. <br/>
+Já a respeito do tempo médio de resolução geral, em média, leva 60,69 horas por chamado, ou seja, mais de 2,5 dias para resolver um problema ou alguma solicitação. Mas, analisando por perfil, vemos que PF (Pessoa Física) possui um desempenho pior (72,73 horas) e PJ (Pessoa Jurídica) possui um desempenho melhor (34,56 horas), apesar da menor quantidade de clientes (1.473 clientes, ou seja, 12,85% de clientes considerando o período de 2022). <br/>
+Além disso, foram abertos 5.166 chamados (35,15%) por busca de informação, um indicativo para melhorar a qualidade e a disposição da informação no site ou app do e-commerce. 
+
+![image]()
+
+A página **"Análise da Distribuição do Tempo de Resolução dos Chamados de Atendimento"** possui um visual criado em Python. No caso, foi criado um histograma com a distribuição de tempo de resolução dos chamados em hora, que seria a diferença entre a Data de Criação e a Data de Encerramento do chamado, com marcadores de quartil 25% (ou seja, um quarto dos dados), mediana (quartil 50%) (ou seja, metade dos dados), média, quartil 75% (ou seja, três quartos dos dados) e desvio padrão. <br/>
+Pelo formato do histograma com um cauda longa à direita, podemos perceber claramente a existência de outliers, assim como a grande diferença entre os valores da mediana e da média, ou seja, existem chamados cujo tempo de resolução difere bastante do comportamento padrão (ou seja, extrapolam o intervalo interquartil). <br/>
+_Observação_: Até o momento de desenvolvimento deste projeto, não há suporte para os visuais do Python nos relatórios publicados na Web, por esse motivo, o gráfico não é renderizado. <br/>
+Link para documentação da Microsoft: https://learn.microsoft.com/pt-br/power-bi/collaborate-share/service-publish-to-web
+
+![image]()
+
+A página **"Segmentação de Clientes"**[^3] possui análise de segmentação do cliente baseado no modelo RFV (Recência, Frequência e Valor) com o intuito de entender e comparar o comportamento do cliente (comparar clientes que não precisaram de atendimento e clientes que abriram um chamado de atendimento, seja para reclamar, informar-se ou solicitar algo). <br/>
+O modelo RFV é definida como: 
+- **R (Recência)**: período desde a última compra (valor menor significa uma maior probabilidade de o cliente repetir pedidos e são clientes mais propensos a promoções)
+- **F (Frequência)**: número de compras realizadas dentro de um certo período (alta frequência significa maior lealdade, clientes mais engajados e satisfeitos) 
+- **V (Valor)**: valor gasto nas compras dentro de um certo período (aqui é possível diferenciar clientes que gastam pesadamente de compras de baixo valor)
+
+Como regra de negócio, foram definidos os seguintes valores para estes parâmetros:
+
+Recência: Qual o período da última compra? 
+- R1: acima de 180 dias
+- R2: entre 90 e 180 dias 
+- R3: entre 65 e 90 dias
+- R4: entre 30 e 65 dias
+- R5: últimos 30 dias
+
+Frequência: Quantas compras foram realizadas nos últimos 12 meses? 
+- F1: entre 0 e 2 compras  
+- F2: entre 2 e 5 compras 
+- F3: entre 5 e 9 compras 
+- F4: entre 9 e 14 compras
+- F5: mais de 14 compras 
+
+Valor: Qual o valor gasto nos últimos 12 meses? 
+- V1: entre R$ 0 e R$ 250 
+- V2: entre R$ 250 e R$ 750 
+- V3: entre R$ 750 e R$ 1500
+- V4: entre R$ 1500 e R$ 2500
+- V5: acima de R$ 2500 
+
+Além disso, o relatório apresenta uma matriz de segmentação de clientes conforme tabela abaixo:
+
+|  Segmentação         |  Atividade                                                                                             |  Dica                                                                                                                                  |  R           |  (F + V) / 2  |
+|----------------------|--------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|:------------:|:-------------:|
+|  Campeões            |  Comprou recentemente. Compra com frequência. E gasta muito!                                           |  Recompense-os. Podem ser os primeiros a adotar novos produtos. Irá promover a sua marca.                                              |  > 4         |  > 4          |
+|  Clientes fiéis      |  Gasta um bom dinheiro. Compra frequentemente.                                                         |  Produtos de maior valor agregado. Peça opiniões. Envolva-os.                                                                          |  > 2         |  > 3          |
+|  Potenciais fiéis    |  Clientes recentes. Gastaram uma boa quantia. Compraram mais de uma vez.                               |  Ofereça programa de associação / fidelidade, recomende outros produtos.                                                               |  > 3         |  > 1 e < 3    |
+|  Clientes recentes   |  Comprou recentemente. Mas não com frequência.                                                         |  Forneça suporte de integração, dê-lhes sucesso antecipado e comece a construir um relacionamento.                                     |  > 4         |  > 0 e <= 1   |
+|  Promissores         |  Compradores recentes. Mas não gastaram muito.                                                         |  Crie reconhecimento da marca, ofereça testes gratuitos.                                                                               |  > 3 e <= 4  |  > 0 e <= 1   |
+|  Precisam de atenção |  Recência, frequência e valores monetários acima da média. (Pode não ter comprado muito recentemente). |  Faça ofertas por tempo limitado, recomende com base em compras anteriores. Reative-os.                                                |  > 2 e <= 3  |  > 2 e <= 3   |
+|  Prestes a hibernar  |  Abaixo da média da Recência, Frequência e Valores Monetários. (Perderá se não for reativados).        |  Compartilhe recursos valiosos, recomende produtos / renovações populares com desconto, reconecte-se a eles.                          |  > 2 e <= 3  |  > 0 e <= 2   |
+|  Em risco            |  Gastou muito dinheiro e comprou com frequência. Mas há muito tempo. (Precisa trazê-los de volta)!     |  Envie e-mails personalizados para se reconectar, ofereça renovações, forneça recursos úteis.                                          |  > 0 e <= 2  |  > 2          |
+|  Não posso perder    |  Fez grandes compras e com frequência. Mas há algum tempo.                                             |  Conquiste-os de volta através de renovações ou produtos mais recentes, não os perca para a   concorrência, converse com eles. |  > 0 e <= 1  |  > 4          |
+|  Hibernando          |  A última compra foi feita há algum tempo. Pouco gasto e baixo número de pedidos.                      |  Ofereça outros produtos relevantes e descontos especiais. Recrie o valor da marca.                                                    |  = 2         |  = 2          |
+|  Perdidos            |  Recência, frequência e pontuação monetária mais baixas.                                               |  Reviva o interesse com uma campanha de alcance, caso contrário, ignore.                                                               |  < 2         |  < 2          |
+
+Quando não existe um chamado atrelado a compra, percebemos 0,01% de campeões, 0,62% de clientes fiéis, 7,30% de potenciais fiéis e 68,44% de clientes perdidos.  <br/>
+Já quando analisamos compras com chamado atrelado, ou seja, o consumidor necessitou de alguma assistência na jornada de compra, temos 2,06% de campeões, 7,81% de clientes fiéis, 24,23% de potenciais fiéis e 34,48% de clientes perdidos. <br/>
+Aqui conseguimos ver uma diferença interessante, quase uma redução de 50% em clientes perdidos quando o consumidor abre um chamado.  <br/>
+Isso mostra a importância de possuir um bom serviço de atendimento ao cliente em toda a jornada de compra do consumidor. 
+
+![image]()
+
+A página **"NPS - Net Promoter Score"** traz uma análise da métrica NPS, muito utilizada para mensurar o nível de satisfação do cliente em relação à experiência de compra e entrega do produto. <br/>
+Ela é obtida através de uma pesquisa em que se faz apenas uma pergunta: "Em uma escala de 0 a 10, o quanto você indicaria a empresa "Online Shopping Harbor" a um amigo ou colega?", que tem, portanto, como reposta uma nota entre 0 a 10. <br/>
+De acordo com a resposta dada, o cliente é classificado em 3 grupos distintos: 
+- Promotores (aqueles que avaliaram com uma nota 9 ou 10): são clientes fieis que recomendam a empresa 
+- Neutros (aqueles que avaliaram com uma nota 7 ou 8): clientes satisfeitos, mas que não engajam com a empresa 
+- Detratores (aqueles que avaliaram com uma nota 0 a 6): clientes insatisfeitos que criticam a empresa para amigos e familiares
+Para o cálculo do NPS, basta calcular a % de promotores e a % de detratores e realizar a subtração entre os valores obtidos. 
+
+No caso da "Online Shopping Harbor", vemos que a concentração de respostas se encontra nas notas 9 e 10, apesar disso, o NPS é de aproximadamente 70, média mantida ao longo do ano de 2022. Isso só mostra que a empresa precisa melhorar em relação à satisfação do cliente. <br/>
+Ao contrário da análise de segmentação de clientes, consumidores que abriram chamado e responderam à pesquisa NPS resultam em uma nota muito baixa, pois o número de detratores é maior que o número de promotores. Porém, somente 1.132 avaliações foram realizadas, em torno de 4,2% do total. <br/>
+Já aqueles que não abriram chamado e responderam à pesquisa NPS resultam em um nota melhor, em torno de 73,53. 
+
+![image]()
+
+---
+
+## Próximos Passos
+
+Como próximos passos e continuidade deste projeto, sugiro:
+- Com os insights obtidos, criar uma página de recomendações e sugestões de ações para melhorar o atendimento ao cliente
+- Criar análises avançadas, talvez utilizando Machine Learning, para entender melhor o perfil do cliente quano este busca alguma ajuda no SAC da empresa 
 
 ---
 
 ## Fontes e Referências
 
-Esta seção disponibiliza as fontes e as referências utilizadas para o desenvolvimento do projeto e resolução do problema proposto. 
+Esta seção disponibiliza as fontes e as referências utilizadas para o desenvolvimento do projeto. 
 
-[^1]: Nome escolhido com uso do ChatGPT
+[^1]: Nome escolhido com uso do ChatGPT 
+
+[^2]: A imagem no canto superior esquerdo é a logo da empresa fictícia "Online Shipping Harbor", criada utilizando "Image Creator from Microsoft Bing" (https://www.bing.com/create/)
+
+[^3]: O desenvolvimento da análise RFV foi baseada no seguinte conteúdo: https://powerbiexperience.com/pt/blog/usando-dax-para-segmentar-clientes-por-rfv-recencia-frequencia-e-valor/
