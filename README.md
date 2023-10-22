@@ -65,7 +65,7 @@ Esta seção aborda a descrição do problema de negócio escolhido para desenvo
   - **dados_clientes.xlsx**: dados de cadastro de clientes
   - **dados_categoria_produtos.xlsx**: dados de cadastro de categorias e departamentos dos produtos disponibilizados pela "Online Shopping Harbor"
 
-**Link do Dashboard no Power BI**: 
+**Link do Dashboard no Power BI**: [clique aqui](https://app.powerbi.com/view?r=eyJrIjoiMWU4NThhN2ItNGFmZi00YWM2LTlmYTQtYTViOGRmOWMyZjM4IiwidCI6IjgxMTFjMzgxLThjM2EtNDNkMS05ODc4LTA5ZjAzZGQ0N2Y1NiJ9)
 
 ---
 
