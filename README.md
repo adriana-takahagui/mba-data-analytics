@@ -12,11 +12,11 @@
    * [Metodologia](https://github.com/adriana-takahagui/mba-data-analytics#metodologia)
    * [Desenvolvimento](https://github.com/adriana-takahagui/mba-data-analytics#desenvolvimento)
      * [Preparação dos dados](https://github.com/adriana-takahagui/mba-data-analytics#preparação-dos-dados)
-     * [Tratamento dos Dados no Power Query Editor]()
-     * [Relacionamento das Tabelas]()
-     * [Relatórios e Insights]()
-   * [Próximos Passos]()
-   * [Fontes e Referências](https://github.com/adriana-takahagui/mba-data-analytics#fontes-e-refer%C3%AAncias)
+     * [Tratamento dos Dados no Power Query Editor](https://github.com/adriana-takahagui/mba-data-analytics#tratamentos-dos-dados-no-power-query-editor)
+     * [Relacionamento das Tabelas](https://github.com/adriana-takahagui/mba-data-analytics#relacionamento-das-tabelas)
+     * [Relatórios e Insights](https://github.com/adriana-takahagui/mba-data-analytics#relatórios-e-insights)
+   * [Próximos Passos](https://github.com/adriana-takahagui/mba-data-analytics#próximos-passos)
+   * [Fontes e Referências](https://github.com/adriana-takahagui/mba-data-analytics#fontes-e-referências)
 <!--te-->
 
 ---
@@ -31,7 +31,7 @@
 - [X] Resolver o problema de negócio com aplicação dos conhecimentos dos módulos da disciplina Data Analytics. 
 - [X] Tema Livre, preferencialmente um problema corriqueiro da empresa ou área em que atua.
 - [X] Power BI: deve-se construir um dashboard em Power BI.
-- [ ] Python: O dashboard em Power BI deve conter no mínimo um gráfico construído com o Python. O Data Wrangling pode-se utilizar o Python.
+- [X] Python: O dashboard em Power BI deve conter no mínimo um gráfico construído com o Python. O Data Wrangling pode-se utilizar o Python.
 
 ---
 
@@ -244,7 +244,7 @@ Tabela "f_NPS":
 
 De acordo com a preparação e o tratamento especificados acima, a imagem abaixo apresenta a configuração final do relacionamento de todas as tabelas utilizadas na construção do dashboard.
 
-![image]()
+![image](images/relacionamentos.png)
 
 ### Relatórios e Insights
 
@@ -257,7 +257,7 @@ Este dashboard é formado por 5 páginas:
 
 A página **"Página Inicial"** traz as principais informações resumidas a respeito do dashboard, assim como o link para este documento.[^2]
 
-![image]()
+![image](images/dashboard1.PNG)
 
 A página **"Análise de Chamados de Atendimento"** traz uma visão geral dos principais indicadores de atendimento ao cliente como: 
 - FCR (First Contact Resolution): indica a porcentagem de interações do cliente que são resolvidas na primeira tentativa de contato
@@ -273,14 +273,14 @@ A Taxa de Resolução geral no 1º Chamado (FCR) é de 75,63%, uma taxa aceitáv
 Já a respeito do tempo médio de resolução geral, em média, leva 60,69 horas por chamado, ou seja, mais de 2,5 dias para resolver um problema ou alguma solicitação. Mas, analisando por perfil, vemos que PF (Pessoa Física) possui um desempenho pior (72,73 horas) e PJ (Pessoa Jurídica) possui um desempenho melhor (34,56 horas), apesar da menor quantidade de clientes (1.473 clientes, ou seja, 12,85% de clientes considerando o período de 2022). <br/>
 Além disso, foram abertos 5.166 chamados (35,15%) por busca de informação, um indicativo para melhorar a qualidade e a disposição da informação no site ou app do e-commerce. 
 
-![image]()
+![image](images/dashboard2.PNG)
 
 A página **"Análise da Distribuição do Tempo de Resolução dos Chamados de Atendimento"** possui um visual criado em Python. No caso, foi criado um histograma com a distribuição de tempo de resolução dos chamados em hora, que seria a diferença entre a Data de Criação e a Data de Encerramento do chamado, com marcadores de quartil 25% (ou seja, um quarto dos dados), mediana (quartil 50%) (ou seja, metade dos dados), média, quartil 75% (ou seja, três quartos dos dados) e desvio padrão. <br/>
 Pelo formato do histograma com um cauda longa à direita, podemos perceber claramente a existência de outliers, assim como a grande diferença entre os valores da mediana e da média, ou seja, existem chamados cujo tempo de resolução difere bastante do comportamento padrão (ou seja, extrapolam o intervalo interquartil). <br/>
 _Observação_: Até o momento de desenvolvimento deste projeto, não há suporte para os visuais do Python nos relatórios publicados na Web, por esse motivo, o gráfico não é renderizado. <br/>
 Link para documentação da Microsoft: https://learn.microsoft.com/pt-br/power-bi/collaborate-share/service-publish-to-web
 
-![image]()
+![image](images/dashboard3.PNG)
 
 A página **"Segmentação de Clientes"**[^3] possui análise de segmentação do cliente baseado no modelo RFV (Recência, Frequência e Valor) com o intuito de entender e comparar o comportamento do cliente (comparar clientes que não precisaram de atendimento e clientes que abriram um chamado de atendimento, seja para reclamar, informar-se ou solicitar algo). <br/>
 O modelo RFV é definida como: 
@@ -332,7 +332,11 @@ Já quando analisamos compras com chamado atrelado, ou seja, o consumidor necess
 Aqui conseguimos ver uma diferença interessante, quase uma redução de 50% em clientes perdidos quando o consumidor abre um chamado.  <br/>
 Isso mostra a importância de possuir um bom serviço de atendimento ao cliente em toda a jornada de compra do consumidor. 
 
-![image]()
+![image](images/dashboard4.PNG)
+
+Verificando o detalhe de formação de cada segmentação: quais os clientes estão presentes nessa segmentação, regiões, e tipo de consumidor.
+
+![image](images/dashboard5.PNG)
 
 A página **"NPS - Net Promoter Score"** traz uma análise da métrica NPS, muito utilizada para mensurar o nível de satisfação do cliente em relação à experiência de compra e entrega do produto. <br/>
 Ela é obtida através de uma pesquisa em que se faz apenas uma pergunta: "Em uma escala de 0 a 10, o quanto você indicaria a empresa "Online Shopping Harbor" a um amigo ou colega?", que tem, portanto, como reposta uma nota entre 0 a 10. <br/>
@@ -346,7 +350,7 @@ No caso da "Online Shopping Harbor", vemos que a concentração de respostas se 
 Ao contrário da análise de segmentação de clientes, consumidores que abriram chamado e responderam à pesquisa NPS resultam em uma nota muito baixa, pois o número de detratores é maior que o número de promotores. Porém, somente 1.132 avaliações foram realizadas, em torno de 4,2% do total. <br/>
 Já aqueles que não abriram chamado e responderam à pesquisa NPS resultam em um nota melhor, em torno de 73,53. 
 
-![image]()
+![image](images/dashboard6.PNG)
 
 ---
 
