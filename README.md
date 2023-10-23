@@ -370,7 +370,7 @@ Já aqueles que não abriram chamado e responderam à pesquisa NPS resultam em u
 
 Como próximos passos e continuidade deste projeto, sugiro:
 - Com os insights obtidos, criar uma página de recomendações e sugestões de ações para melhorar o atendimento ao cliente
-- Criar análises avançadas, talvez utilizando Machine Learning, para entender melhor o perfil do cliente quano este busca alguma ajuda no SAC da empresa 
+- Criar análises avançadas, talvez utilizando Machine Learning, para entender melhor o perfil do cliente quando este busca algum suporte no SAC da empresa 
 
 ---
 
