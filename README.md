@@ -278,7 +278,7 @@ Além disso, foram abertos 5.166 chamados (35,15%) por busca de informação, um
 
 ![image](images/dashboard2.PNG)
 
-A página **"Análise da Distribuição do Tempo de Resolução dos Chamados de Atendimento"** possui um visual criado em Python. No caso, foi criado um histograma com a distribuição de tempo de resolução dos chamados em hora, que seria a diferença entre a Data de Criação e a Data de Encerramento do chamado, com marcadores de quartil 25% (ou seja, um quarto dos dados), mediana (quartil 50%) (ou seja, metade dos dados), média, quartil 75% (ou seja, três quartos dos dados) e desvio padrão. 
+A página **"Análise da Distribuição do Tempo de Resolução dos Chamados de Atendimento"** possui um visual criado em Python. No caso, foi criado um histograma com a distribuição de tempo de resolução dos chamados em hora, que seria a diferença entre a Data de Criação e a Data de Encerramento do chamado, com marcadores de quartil 25% (ou seja, um quarto dos chamados), mediana (quartil 50%) (ou seja, metade dos chamados), média, quartil 75% (ou seja, três quartos dos chamados) e desvio padrão. 
 
 Pelo formato do histograma com um cauda longa à direita, podemos perceber claramente a existência de outliers, assim como a grande diferença entre os valores da mediana (10 horas) e da média (60,68 horas), ou seja, existem chamados cujo tempo de resolução difere bastante do comportamento padrão (ou seja, extrapolam o intervalo interquartil). 
 
@@ -286,6 +286,10 @@ _Observação_: Até o momento de desenvolvimento deste projeto, não há suport
 Link para documentação da Microsoft: https://learn.microsoft.com/pt-br/power-bi/collaborate-share/service-publish-to-web
 
 ![image](images/dashboard3.PNG)
+
+Na imagem abaixo, podemos ver que no mês das mães (Maio/2022), para compras entregues ao cliente e que tiveram alguma reclamação, 25% dos chamados teve um tempo de resolução de 24 horas (ou seja, 1 dia), 50% dos chamados teve um tempo de resolução de 72 horas (ou seja, 3 dias) e a maioria (75%) dos chamados teve um tempo de resolução de 147 horas (ou seja, mais de 6 dias). Isso mostra a necessidade de melhorar o atendimento para que se resolva qualquer problema mais rapidamente. 
+
+![image](images/dashboard7.png)
 
 A página **"Segmentação de Clientes"**[^3] possui análise de segmentação de clientes baseada no modelo RFV (Recência, Frequência e Valor) com o intuito de entender e comparar o comportamento do cliente (comparar clientes que não precisaram de atendimento e clientes que abriram um chamado de atendimento, seja para reclamar, informar-se ou solicitar algo). 
 
