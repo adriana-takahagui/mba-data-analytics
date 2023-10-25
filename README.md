@@ -1,4 +1,4 @@
-# Projeto de Conclusão da Disciplina "Data Analytics" do MBA em Data Science
+# Projeto de Conclusão da Disciplina "Data Analytics" do MBA em Data Science da Famesp em parceria com a FLAI
 <p align="right">Outubro/2023</p>
 
 ---
@@ -45,7 +45,7 @@ Esta seção aborda a descrição do problema de negócio escolhido para desenvo
 
 **Objetivo**:
 
-- Melhorar o relacionamento com o cliente em todo o processo de venda, fortalecer a marca com maior presença no mercado, capturar as necessidades do cliente, e melhorar a sua satisfação, tudo isso focando na análise do atendimento ao cliente (_customer service_) e de sua experiência e satisfação na jornada de compra.
+- Melhorar o relacionamento com o cliente em todo o processo de venda, fortalecer a marca com maior presença no mercado, capturar as necessidades do cliente, e melhorar a sua satisfação, tudo isso focando na análise do atendimento ao cliente (_customer service_) e de sua experiência na jornada de compra.
 
 **Problema de Negócio**:
 
@@ -163,14 +163,14 @@ Esta seção descreve as tabelas e as variáveis utilizadas no projeto e no prob
 **3. Preparação dos dados** <br/>
 **Como os dados foram tratados e preparados para o dashboard?**
 - Após o entendimento dos dados, a próxima fase é a preparação dos dados, uma fase muito importante e que toma bastante tempo. Ela é formada por diversas etapas como: transformação dos dados, criação de novas variáveis, agrupamento de dados, entre outras. 
-- Nesta fase, foi retirada a amostra aleatória com os dados anonimizados, sumarizados e contemplando o problema proposto. 
+- Nesta fase, foi retirada uma amostra aleatória com os dados anonimizados, sumarizados e contemplando o problema proposto. 
 - Depois disso, alguns tratamentos foram realizados no Power Query Editor. 
 
 **4. Realização de cálculos para Análise** <br/>
 **Quais as medidas e cálculos necessários para análise?**
 - Esta fase envolve a criação de medidas DAX para atender as análises e indicadores que irão compor o Dashboard. Aqui, diversas medidas e cálculos foram criados para:
   - Indicadores de chamados de atendimento
-  - NPS
+  - NPS - Net Promoter Score
   - Segmentação de clientes através da análise RFV
 
 **5. Storytelling** <br/>
@@ -186,7 +186,7 @@ Esta seção descreve as tabelas e as variáveis utilizadas no projeto e no prob
 **7. Acesso ao dashboard** <br/>
 **Como a área de negócio irá acessar o resultado (dashboard)?**
 - Uma vez que o dashboard esteja disponibilizado, a área de negócio poderá acessá-lo diariamente no Serviço online do Power BI pelo link https://app.powerbi.com/, logando com seu usuário e senha. 
-- O dashboard também poderá ser embedado em um portal ou intranet da empresa "Online Shopping Harbor", facilitando o acesso rápido. 
+- O dashboard também poderá ser embedado em um portal ou intranet da empresa "Online Shopping Harbor", facilitando o acesso rápido a ele. 
 
 ---
 
@@ -270,7 +270,7 @@ A página **"Análise de Chamados de Atendimento"** traz uma visão geral dos pr
 
 Podemos verificar que ao longo do ano de 2022, no geral, tiveram alguns picos de abertura de chamados que coincidem com datas comemorativas como no mês de maio (Dia das Mães) e no mês de novembro/dezembro (Black Friday), um comportamento esperado para empresas de varejo, pois o volume de pedidos também aumenta. 
 
-A Taxa de Resolução geral no 1º Chamado (FCR) é de 75,63%, uma taxa aceitável, sendo que para PF (Pessoa Física) ficou em torno de 72,11% (abaixo da meta esperada de 75%) e para PJ (Pessoa Jurídica) ficou em torno de 83,27%. 
+A Taxa de Resolução geral no 1º Chamado (FCR) é de 75,63%, uma taxa aceitável, sendo que para PF (Pessoa Física) ficou em torno de 72,11% (abaixo da meta esperada de 75%) e para PJ (Pessoa Jurídica) ficou em torno de 83,27% (11,03% acima da meta). 
 
 Já a respeito do tempo médio de resolução geral, em média, leva 60,69 horas por chamado, ou seja, mais de 2,5 dias para resolver um problema ou alguma solicitação. Mas, analisando por perfil, vemos que PF (Pessoa Física) possui um desempenho pior (72,73 horas) e PJ (Pessoa Jurídica) possui um desempenho melhor (34,56 horas), apesar da menor quantidade de clientes (1.473 clientes, ou seja, 12,85% de clientes considerando o período de 2022). 
 
@@ -287,12 +287,12 @@ Link para documentação da Microsoft: https://learn.microsoft.com/pt-br/power-b
 
 ![image](images/dashboard3.PNG)
 
-A página **"Segmentação de Clientes"**[^3] possui análise de segmentação do cliente baseado no modelo RFV (Recência, Frequência e Valor) com o intuito de entender e comparar o comportamento do cliente (comparar clientes que não precisaram de atendimento e clientes que abriram um chamado de atendimento, seja para reclamar, informar-se ou solicitar algo). 
+A página **"Segmentação de Clientes"**[^3] possui análise de segmentação de clientes baseada no modelo RFV (Recência, Frequência e Valor) com o intuito de entender e comparar o comportamento do cliente (comparar clientes que não precisaram de atendimento e clientes que abriram um chamado de atendimento, seja para reclamar, informar-se ou solicitar algo). 
 
-O modelo RFV é definida como: 
+O modelo RFV é definido como: 
 - **R (Recência)**: período desde a última compra (valor menor significa uma maior probabilidade de o cliente repetir pedidos e são clientes mais propensos a promoções)
 - **F (Frequência)**: número de compras realizadas dentro de um certo período (alta frequência significa maior lealdade, clientes mais engajados e satisfeitos) 
-- **V (Valor)**: valor gasto nas compras dentro de um certo período (aqui é possível diferenciar clientes que gastam pesadamente de compras de baixo valor)
+- **V (Valor)**: valor gasto nas compras dentro de um certo período (aqui é possível diferenciar clientes que gastam bem de compras de baixo valor)
 
 Como regra de negócio, foram definidos os seguintes valores para estes parâmetros:
 
@@ -337,30 +337,31 @@ Quando não existe um chamado atrelado a compra, percebemos 0,01% de campeões, 
 
 Já quando analisamos compras com chamado atrelado, ou seja, o consumidor necessitou de alguma assistência na jornada de compra, temos 2,06% de campeões, 7,81% de clientes fiéis, 24,23% de potenciais fiéis e 34,48% de clientes perdidos. 
 
-Aqui conseguimos ver uma diferença interessante, quase uma redução de 50% em clientes perdidos quando o consumidor abre um chamado.  <br/>
-Isso mostra a importância de possuir um bom serviço de atendimento ao cliente em toda a jornada de compra do consumidor. 
+Aqui conseguimos perceber uma diferença interessante, quase uma redução de 50% em clientes perdidos quando o consumidor abre um chamado.  <br/>
+Isso mostra a importância de possuir um bom serviço de atendimento ao cliente em toda a jornada de compra do consumidor, assim como um atendimento que esteja presente e de fácil acesso. 
 
 ![image](images/dashboard4.PNG)
 
-Verificando o detalhe de formação de cada segmentação: quais os clientes estão presentes nessa segmentação, regiões, e tipo de consumidor.
+Podemos também verificar o detalhe de formação de cada segmentação, ou seja, quais os clientes estão presentes nessa segmentação, regiões, e tipo de consumidor, selecionando o segmento e clicando no botão para chegar na visualização abaixo.
 
 ![image](images/dashboard5.PNG)
 
 A página **"NPS - Net Promoter Score"** traz uma análise da métrica NPS, muito utilizada para mensurar o nível de satisfação do cliente em relação à experiência de compra e entrega do produto. 
 
-Ela é obtida através de uma pesquisa em que se faz apenas uma pergunta: "Em uma escala de 0 a 10, o quanto você indicaria a empresa "Online Shopping Harbor" a um amigo ou colega?", que tem, portanto, como reposta uma nota entre 0 a 10. 
+Ela é obtida através de uma pesquisa em que se faz apenas uma pergunta: _"Em uma escala de 0 a 10, o quanto você indicaria a empresa "Online Shopping Harbor" a um amigo ou colega?"_, que tem, portanto, como resposta uma nota entre 0 a 10. 
 
 De acordo com a resposta dada, o cliente é classificado em 3 grupos distintos: 
-- Promotores (aqueles que avaliaram com uma nota 9 ou 10): são clientes fieis que recomendam a empresa 
-- Neutros (aqueles que avaliaram com uma nota 7 ou 8): clientes satisfeitos, mas que não engajam com a empresa 
-- Detratores (aqueles que avaliaram com uma nota 0 a 6): clientes insatisfeitos que criticam a empresa para amigos e familiares
+- **Promotores** (aqueles que avaliaram com uma nota 9 ou 10): são clientes fieis que recomendam a empresa 
+- **Neutros** (aqueles que avaliaram com uma nota 7 ou 8): clientes satisfeitos, mas que não engajam com a empresa 
+- **Detratores** (aqueles que avaliaram com uma nota 0 a 6): clientes insatisfeitos que criticam a empresa para amigos e familiares 
+
 Para o cálculo do NPS, basta calcular a % de promotores e a % de detratores e realizar a subtração entre os valores obtidos. 
 
-No caso da "Online Shopping Harbor", vemos que a concentração de respostas se encontra nas notas 9 e 10, apesar disso, o NPS é de aproximadamente 70, média mantida ao longo do ano de 2022. Isso só mostra que a empresa precisa melhorar em relação à satisfação do cliente. 
-                                     
+No caso da "Online Shopping Harbor", vemos que a concentração de respostas se encontra nas notas 9 e 10, apesar disso, o NPS é de aproximadamente 70, média mantida ao longo do ano de 2022. Isso mostra que a empresa precisa melhorar em relação à satisfação do cliente para alcançar a meta de 90. 
+
 Ao contrário da análise de segmentação de clientes, consumidores que abriram chamado e responderam à pesquisa NPS resultam em uma nota muito baixa, pois o número de detratores é maior que o número de promotores. Porém, somente 1.132 avaliações foram realizadas, em torno de 4,2% do total. 
 
-Já aqueles que não abriram chamado e responderam à pesquisa NPS resultam em um nota melhor, em torno de 73,53. 
+Já aqueles que não precisaram de ajuda e responderam à pesquisa NPS resultam em um nota melhor, em torno de 73,53. 
 
 ![image](images/dashboard6.PNG)
 
